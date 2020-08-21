@@ -1,0 +1,75 @@
+//to load the image
+>docker pull mongo
+
+//to display the images downloaded
+>docker images
+
+for mongodb:
+>docker run -d -p 27017:27017 --name aspnetrun-mongo mongo
+
+for sql server:
+>docker pull mcr.microsoft.com/mssql/server
+
+//to display running containers
+>docker ps
+
+//to open a mongodb interactive terminal
+>docker exec -it aspnetrun-mongo /bin/bash
+
+//to see the list of folders (type in the terminal)
+ls
+
+//to open terminal
+mogo
+
+//to shows all databases
+show dbs
+//or
+show databases
+
+//to create CatalogDb
+use CatalogDb
+
+//to create Products collection
+db.createCollection('Products')
+
+// to show collections
+show collections
+
+//to enter records in the collection
+db.Products.insertMany(
+[
+	{
+		"Name": "Asus Laptop",
+		"Category":"Computers",
+		"Summary":"Summary",
+		"Description":"Description",
+		"ImageFile":"Image File",
+		"Price":54.90
+	},
+	{
+		"Name": "HP Laptop",
+		"Category":"Computers",
+		"Summary":"Summary",
+		"Description":"Description",
+		"ImageFile":"Image File",
+		"Price":83.90
+	}
+]
+)
+
+//to show all the Products
+db.Products.find({}).pretty()
+
+//to remove added products
+db.Products.remove({})
+
+//docker command to compose
+>docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
+
+//redis
+docker pull redis
+docker run -d -p 6379 --name aspnetrun-redis redis
+docker logs -f aspnetrun-redis
+docker exec -it aspnetrun-redis /bin/bash
+to open terminal--> redis-cli
