@@ -26,3 +26,21 @@ Load Balancing
 API Gateway
 
 Container - host to our microservices - Docker etc.
+
+
+Microsoft .NET MVC Web API - .NET Core/.NET Framework
+
+middleware pipleine
+
+IHttpHandler IHttpModule
+
+HttpApplication --> Start, BeginRequest, AuthenticateRequest, AR, PRHE,
+
+class A: IHttpModule{} web.config
+
+Logging Faciltiy, Middlewares, Custom
+
+
+
+
+
