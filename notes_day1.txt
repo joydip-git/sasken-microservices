@@ -1,0 +1,28 @@
+1. Monolithic application
+2. advantages 
+3. disadvatnages - one big block of deployable code
+                 - any change in any module will force to retest and redploy the entire application
+		 - scaling
+		 - reliability
+desktop/web based application - both can be monolithic
+Distributed architecture - SOA
+SOA done better way - Microservices
+
+Reusability - segregation, scalibility, separate modules as services
+maintenance, use different technologies to built microservices, different domain models, databases
+deployed separately
+
+Monolithic
+modularity during coding/development, but NOT during deployment
+
+Microservices architecture:
+modularity during coding/development, as well as during during deployment
+
+terms:
+Communication between micro services
+Messaging, Message Broker, Message Queue
+Services Registration and Discovery
+Load Balancing
+API Gateway
+
+Container - host to our microservices - Docker etc.
