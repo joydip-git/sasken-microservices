@@ -122,8 +122,6 @@ E:\sasken-microservices\MicroservicesApp\src\Catalog\Catalog.API\bin\Debug\netco
 E:\sasken-microservices\MicroservicesApp\src\Catalog\Catalog.API\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy32.dll
 E:\sasken-microservices\MicroservicesApp\src\Catalog\Catalog.API\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy64.dll
 E:\sasken-microservices\MicroservicesApp\src\Catalog\Catalog.API\obj\Debug\netcoreapp3.1\Catalog.API.csprojAssemblyReference.cache
-E:\sasken-microservices\MicroservicesApp\src\Catalog\Catalog.API\obj\Debug\netcoreapp3.1\Catalog.API.csproj.CoreCompileInputs.cache
-E:\sasken-microservices\MicroservicesApp\src\Catalog\Catalog.API\obj\Debug\netcoreapp3.1\Catalog.API.MvcApplicationPartsAssemblyInfo.cache
 E:\sasken-microservices\MicroservicesApp\src\Catalog\Catalog.API\obj\Debug\netcoreapp3.1\Catalog.API.AssemblyInfoInputs.cache
 E:\sasken-microservices\MicroservicesApp\src\Catalog\Catalog.API\obj\Debug\netcoreapp3.1\Catalog.API.AssemblyInfo.cs
 E:\sasken-microservices\MicroservicesApp\src\Catalog\Catalog.API\obj\Debug\netcoreapp3.1\Catalog.API.RazorTargetAssemblyInfo.cache
@@ -133,3 +131,10 @@ E:\sasken-microservices\MicroservicesApp\src\Catalog\Catalog.API\obj\Debug\netco
 E:\sasken-microservices\MicroservicesApp\src\Catalog\Catalog.API\obj\Debug\netcoreapp3.1\Catalog.API.dll
 E:\sasken-microservices\MicroservicesApp\src\Catalog\Catalog.API\obj\Debug\netcoreapp3.1\Catalog.API.pdb
 E:\sasken-microservices\MicroservicesApp\src\Catalog\Catalog.API\obj\Debug\netcoreapp3.1\Catalog.API.genruntimeconfig.cache
+E:\sasken-microservices\MicroservicesApp\src\Catalog\Catalog.API\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+E:\sasken-microservices\MicroservicesApp\src\Catalog\Catalog.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+E:\sasken-microservices\MicroservicesApp\src\Catalog\Catalog.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\sasken-microservices\MicroservicesApp\src\Catalog\Catalog.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\sasken-microservices\MicroservicesApp\src\Catalog\Catalog.API\obj\Debug\netcoreapp3.1\Catalog.API.csproj.CoreCompileInputs.cache
+E:\sasken-microservices\MicroservicesApp\src\Catalog\Catalog.API\obj\Debug\netcoreapp3.1\Catalog.API.MvcApplicationPartsAssemblyInfo.cs
+E:\sasken-microservices\MicroservicesApp\src\Catalog\Catalog.API\obj\Debug\netcoreapp3.1\Catalog.API.MvcApplicationPartsAssemblyInfo.cache
