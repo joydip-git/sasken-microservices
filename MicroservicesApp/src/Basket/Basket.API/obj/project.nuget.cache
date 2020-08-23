@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kB5BIb30r3wKo9OXd5nfR4BJReHzt7H9XHNidQUZSKI3VbuNfL7EtldeaYOXi9JWGXpNaeZWD+di8I5G0X5xNg==",
+  "dgSpecHash": "AA4Ynl5fLoCp/HwvgNEieE1zw4oj4XNirOpJESh5J0DRnj8UEFmtTJakp1KuIG3eu3vFl6iD0ZkYh5uqF9SmVA==",
   "success": true,
   "projectFilePath": "E:\\sasken-microservices\\MicroservicesApp\\src\\Basket\\Basket.API\\Basket.API.csproj",
   "expectedPackageFiles": [
@@ -21,6 +21,7 @@
     "C:\\Users\\joydip\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\joydip\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\joydip\\.nuget\\packages\\microsoft.openapi\\1.1.4\\microsoft.openapi.1.1.4.nupkg.sha512",
+    "C:\\Users\\joydip\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.8\\microsoft.visualstudio.azure.containers.tools.targets.1.10.8.nupkg.sha512",
     "C:\\Users\\joydip\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\3.1.4\\microsoft.visualstudio.web.codegeneration.3.1.4.nupkg.sha512",
     "C:\\Users\\joydip\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.contracts\\3.1.4\\microsoft.visualstudio.web.codegeneration.contracts.3.1.4.nupkg.sha512",
     "C:\\Users\\joydip\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.core\\3.1.4\\microsoft.visualstudio.web.codegeneration.core.3.1.4.nupkg.sha512",

@@ -48,3 +48,14 @@ E:\sasken-microservices\MicroservicesApp\bin\Debug\Catalog.API.pdb
 E:\sasken-microservices\MicroservicesApp\obj\Debug\docker-compose.dcprojAssemblyReference.cache
 E:\sasken-microservices\MicroservicesApp\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 E:\sasken-microservices\MicroservicesApp\obj\Debug\docker-compose.dcproj.CopyComplete
+E:\sasken-microservices\MicroservicesApp\bin\Debug\Basket.API.exe
+E:\sasken-microservices\MicroservicesApp\bin\Debug\Basket.API.dll
+E:\sasken-microservices\MicroservicesApp\bin\Debug\StackExchange.Redis.dll
+E:\sasken-microservices\MicroservicesApp\bin\Debug\Newtonsoft.Json.dll
+E:\sasken-microservices\MicroservicesApp\bin\Debug\System.Threading.Channels.dll
+E:\sasken-microservices\MicroservicesApp\bin\Debug\Pipelines.Sockets.Unofficial.dll
+E:\sasken-microservices\MicroservicesApp\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\sasken-microservices\MicroservicesApp\bin\Debug\System.Diagnostics.PerformanceCounter.dll
+E:\sasken-microservices\MicroservicesApp\bin\Debug\System.IO.Pipelines.dll
+E:\sasken-microservices\MicroservicesApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\sasken-microservices\MicroservicesApp\bin\Debug\Basket.API.pdb

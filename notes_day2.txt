@@ -23,6 +23,21 @@ helps you to define set of related "services" to be deployed as a composed appli
 configure depnedency relations and run-time configuration
 
 docker-compose.override.yml: configure microservices environments
+settings which will override base docker
+
+docker-compose.prod.yml
+docker-compose.staging.yml
 
 services:
-   
+
+order api
+basket api
+
+communicate:
+sync, async - >> req-res, pub-sub, event based communication
+   event bus - rabbit mq
+
+load balancing - >> api gateway
+identity service
+
+CQRS
