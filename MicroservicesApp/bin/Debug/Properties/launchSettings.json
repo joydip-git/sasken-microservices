@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:54660",
+      "applicationUrl": "http://localhost:54667",
       "sslPort": 0
     }
   },
@@ -16,9 +16,9 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://localhost:5001"
+      "applicationUrl": "http://localhost:5000"
     },
-    "Basket.API": {
+    "Catalog.API": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "weatherforecast",
@@ -30,7 +30,7 @@
     "Docker": {
       "commandName": "Docker",
       "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/weatherforecast",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
       "publishAllPorts": true
     }
   }

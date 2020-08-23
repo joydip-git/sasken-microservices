@@ -1,0 +1,38 @@
+services:
+  catalog.api:
+    build:
+      context: E:\sasken-microservices\MicroservicesApp
+      dockerfile: src/Catalog/Catalog.API/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Catalog.API
+      target: base
+    container_name: catalogapi
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
+    image: catalogapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  "/app/bin/Debug/netcoreapp3.1/Catalog.API.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - target: 80
+    tty: true
+    volumes:
+    - E:\sasken-microservices\MicroservicesApp\src\Catalog\Catalog.API:/app:rw
+    - C:\Users\joydip\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Users\joydip\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\joydip\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
+    - C:\Users\joydip\.nuget\packages:/root/.nuget/packages:ro
+    - E:\sasken-microservices\MicroservicesApp:/src:rw
+  catalogdb:
+    image: mongo
+version: '3.4'

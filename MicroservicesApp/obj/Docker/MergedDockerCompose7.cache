@@ -1,0 +1,9 @@
+services:
+  catalog.api:
+    build:
+      context: E:\sasken-microservices\MicroservicesApp
+      dockerfile: src/Catalog/Catalog.API/Dockerfile
+    image: catalogapi
+  catalogdb:
+    image: mongo
+version: '3.4'

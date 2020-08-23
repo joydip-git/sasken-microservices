@@ -1,0 +1,28 @@
+1. Create/code your app
+2. Create docker file/s
+3. create images defined at docker file--> use base images we take (remotely from docker hub)
+4. define services by writing docker-compose.yml file
+5. run container(s)/compose app (local repository of docker) - 
+6. test your app or microservices
+7. push it to extrenal repo--> github/docker hub/azure
+
+docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
+.dockerignore
+Dockerfile
+metadata docker-compose.yml, docker-compose.override.yml
+
+DOT NOT TAKE THIS APPROACH FOR DEPLOYMENT
+KUBERNETES/HELM (CHART) --> PODS (ORGANIZE CONTAINERS), SEVICES, MASTER
+SERVICE FABRIC
+DOCKER COMPOSE
+
+AKS
+
+docker-compose.yml:  configure microservices
+helps you to define set of related "services" to be deployed as a composed application with deployment commands
+configure depnedency relations and run-time configuration
+
+docker-compose.override.yml: configure microservices environments
+
+services:
+   
