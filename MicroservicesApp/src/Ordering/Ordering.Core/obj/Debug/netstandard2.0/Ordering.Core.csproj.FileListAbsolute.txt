@@ -1,0 +1,8 @@
+E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Core\bin\Debug\netstandard2.0\Ordering.Core.deps.json
+E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Core\bin\Debug\netstandard2.0\Ordering.Core.dll
+E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Core\bin\Debug\netstandard2.0\Ordering.Core.pdb
+E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Core\obj\Debug\netstandard2.0\Ordering.Core.csproj.CoreCompileInputs.cache
+E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Core\obj\Debug\netstandard2.0\Ordering.Core.AssemblyInfoInputs.cache
+E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Core\obj\Debug\netstandard2.0\Ordering.Core.AssemblyInfo.cs
+E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Core\obj\Debug\netstandard2.0\Ordering.Core.dll
+E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Core\obj\Debug\netstandard2.0\Ordering.Core.pdb

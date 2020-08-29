@@ -69,7 +69,41 @@ db.Products.remove({})
 
 //redis
 docker pull redis
-docker run -d -p 6379 --name aspnetrun-redis redis
+docker run -d -p 6379:6379 --name aspnetrun-redis redis
 docker logs -f aspnetrun-redis
 docker exec -it aspnetrun-redis /bin/bash
 to open terminal--> redis-cli
+
+sql server
+docker pull mcr.microsoft.com/mssql/server:2017-latest
+docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Sample@123" -p 1433:1433 --name orderdbserver -d mcr.microsoft.com/mssql/server:2017-latest
+
+to connect: (from sql server ms)
+localhost, 1433
+uid: sa
+pwd: Sample@123
+
+rabbitmq (along with management UI)
+docker pull rabbitmq:3-management
+docker run -d --hostname my-rabbit -p 15672:15672 -p 5672:5672 --name some-rabbit rabbitmq:3-management
+
+
+{
+  "userName": "Joydip",
+  "items": [
+    {
+      "quantity": 2,
+      "color": "red",
+      "price": 20,
+      "productId": "1",
+      "productName": "pen"
+    },     
+    {
+      "quantity": 3,
+      "color": "blue",
+      "price": 30,
+      "productId": "2",
+      "productName": "pencil"
+    }
+  ]
+}

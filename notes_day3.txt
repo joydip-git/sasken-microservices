@@ -1,0 +1,43 @@
+shopping cart - monolithic
+
+
+principles of MS:
+1. Indepenent and autonomous
+2. scalability
+3. decentralized
+4. resilient
+5. load balancing
+6. availability
+7. CI/CD
+
+
+challenges:
+
+1. what is the boundary/domain of your microservice? 
+[data and business responsibilties]
+
+what should be he size of microservices?
+goal: meaningful separation with well-defined business capabilities
+NOT goal: NOT ON SIZE, BUT ON BUSINESS CAPABOLITIES
+pattern: BOUNDED CONTEXT (BC) [DDD]
+
+login-->identity MS [user: userName (emailid), password, mobile number,...]
+
+payment--> payment MS: Cosmosdb/graphdb
+
+products--> catalog MS: product/catalog ==> mongodb
+
+cart--> basket MS: cartitem, cart (collection of  cart item) ==> redis
+1. get the cart given the username getCart(userName)==>cart
+2. add/remove from the cart update(cart)==>getcart(userName)==>
+3. checkout (entity: userName, cart (cart items))
+
+order--> order MS: order ==> sqlserver (order==>userName, mobile, total price,...)
+
+MS --> own domain model (data) and functionalities
+
+
+
+
+
+

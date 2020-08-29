@@ -1,0 +1,9 @@
+E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Application\bin\Debug\netstandard2.0\Ordering.Application.deps.json
+E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Application\bin\Debug\netstandard2.0\Ordering.Application.dll
+E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Application\bin\Debug\netstandard2.0\Ordering.Application.pdb
+E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Application\obj\Debug\netstandard2.0\Ordering.Application.csprojAssemblyReference.cache
+E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Application\obj\Debug\netstandard2.0\Ordering.Application.csproj.CoreCompileInputs.cache
+E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Application\obj\Debug\netstandard2.0\Ordering.Application.AssemblyInfoInputs.cache
+E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Application\obj\Debug\netstandard2.0\Ordering.Application.AssemblyInfo.cs
+E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Application\obj\Debug\netstandard2.0\Ordering.Application.dll
+E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Application\obj\Debug\netstandard2.0\Ordering.Application.pdb

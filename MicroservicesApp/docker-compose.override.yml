@@ -10,7 +10,7 @@ services:
             #- ./data:/data/db
         ports:
             - "27017:27017"
-    basektdb:
+    basketdb:
         container_name: basketdb
         restart: always        
         ports:
@@ -28,6 +28,7 @@ services:
             - ${HOME}/.aspnet/https:/root/.aspnet/https
         ports:
             - "9500:80"
+
     basket.api:
         container_name: basketapi
         environment:
