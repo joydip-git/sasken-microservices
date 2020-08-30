@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using Ordering.Application.Commands;
-using Ordering.Application.Reponses;
+using Ordering.Application.Responses;
 using Ordering.Core.Entities;
 
 namespace Ordering.Application.Mapper
 {
-    public class OrderMappingProfile:Profile
+    public class OrderMappingProfile : Profile
     {
         public OrderMappingProfile()
         {

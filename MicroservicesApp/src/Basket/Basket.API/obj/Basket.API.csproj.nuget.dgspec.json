@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\sasken-microservices\\MicroservicesApp\\src\\Basket\\Basket.API\\Basket.API.csproj": {}
+    "E:\\microservices\\MicroservicesApp\\src\\Basket\\Basket.API\\Basket.API.csproj": {}
   },
   "projects": {
-    "E:\\sasken-microservices\\MicroservicesApp\\src\\Basket\\Basket.API\\Basket.API.csproj": {
+    "E:\\microservices\\MicroservicesApp\\src\\Basket\\Basket.API\\Basket.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\sasken-microservices\\MicroservicesApp\\src\\Basket\\Basket.API\\Basket.API.csproj",
+        "projectUniqueName": "E:\\microservices\\MicroservicesApp\\src\\Basket\\Basket.API\\Basket.API.csproj",
         "projectName": "Basket.API",
-        "projectPath": "E:\\sasken-microservices\\MicroservicesApp\\src\\Basket\\Basket.API\\Basket.API.csproj",
+        "projectPath": "E:\\microservices\\MicroservicesApp\\src\\Basket\\Basket.API\\Basket.API.csproj",
         "packagesPath": "C:\\Users\\joydip\\.nuget\\packages\\",
-        "outputPath": "E:\\sasken-microservices\\MicroservicesApp\\src\\Basket\\Basket.API\\obj\\",
+        "outputPath": "E:\\microservices\\MicroservicesApp\\src\\Basket\\Basket.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "E:\\sasken-microservices\\MicroservicesApp\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj": {
-                "projectPath": "E:\\sasken-microservices\\MicroservicesApp\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj"
+              "E:\\microservices\\MicroservicesApp\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj": {
+                "projectPath": "E:\\microservices\\MicroservicesApp\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj"
               }
             }
           }
@@ -52,10 +52,6 @@
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
               "version": "[1.10.8, )"
-            },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-              "target": "Package",
-              "version": "[3.1.4, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -92,14 +88,14 @@
         }
       }
     },
-    "E:\\sasken-microservices\\MicroservicesApp\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj": {
+    "E:\\microservices\\MicroservicesApp\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\sasken-microservices\\MicroservicesApp\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj",
+        "projectUniqueName": "E:\\microservices\\MicroservicesApp\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj",
         "projectName": "EventBusRabbitMQ",
-        "projectPath": "E:\\sasken-microservices\\MicroservicesApp\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj",
+        "projectPath": "E:\\microservices\\MicroservicesApp\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj",
         "packagesPath": "C:\\Users\\joydip\\.nuget\\packages\\",
-        "outputPath": "E:\\sasken-microservices\\MicroservicesApp\\src\\Common\\EventBusRabbitMQ\\obj\\",
+        "outputPath": "E:\\microservices\\MicroservicesApp\\src\\Common\\EventBusRabbitMQ\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -109,14 +105,14 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.0"
+          "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.0": {
+          "netcoreapp3.1": {
             "projectReferences": {}
           }
         },
@@ -127,14 +123,8 @@
         }
       },
       "frameworks": {
-        "netstandard2.0": {
+        "netcoreapp3.1": {
           "dependencies": {
-            "NETStandard.Library": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
-            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.3, )"
@@ -154,6 +144,11 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
         }
       }

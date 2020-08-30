@@ -18,7 +18,7 @@ namespace Ordering.Infrastructure.Data
                 orderContext.Database.Migrate();
                 if (!orderContext.Orders.Any())
                 {
-                    orderContext.Orders.AddRange(GetPreConfiguredData());
+                    orderContext.Orders.AddRange(GetPreConfiguredOrders());
                     await orderContext.SaveChangesAsync();
                 }
             }
@@ -27,7 +27,7 @@ namespace Ordering.Infrastructure.Data
                 if (retryForAvailability < 5)
                 {
                     retryForAvailability++;
-                    var log = loggerFactory.CreateLogger<OrderContext>();
+                    var log = loggerFactory.CreateLogger<OrderContextSeed>();
                     log.LogError(ex.Message);
                     await SeedAsync(orderContext, loggerFactory, retryForAvailability);
                 }
@@ -35,11 +35,12 @@ namespace Ordering.Infrastructure.Data
             }
         }
 
-        private static IEnumerable<Order> GetPreConfiguredData()
+        private static IEnumerable<Order> GetPreConfiguredOrders()
         {
-            return new List<Order>
+            return new List<Order>()
             {
-                new Order { UserName="Joydip", FirstName="joy", LastName="joy", AddressLine="bangalore", EmailAddress="joy@gmail.com", TotalPrice = 1000}
+                new Order { UserName = "Joydip", FirstName = "Joydip", LastName = "Mondal", EmailAddress = "joy@gmail.com", AddressLine = "Bangalore", TotalPrice = 1000 },
+                new Order { UserName = "Joydip", FirstName = "Joydip", LastName = "Mondal", EmailAddress ="mon@gmail.com", AddressLine = "Chennai", TotalPrice = 2000 }
             };
         }
     }

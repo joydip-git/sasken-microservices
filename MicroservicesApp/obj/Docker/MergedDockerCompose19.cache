@@ -1,14 +1,27 @@
 services:
-  basektdb:
-    container_name: basketdb
-    image: redis
+  aspnetrunbasics:
+    build:
+      context: E:\microservices\MicroservicesApp
+      dockerfile: src/WebApp/AspnetRunBasics/Dockerfile
+    container_name: aspnetrunbasics
+    depends_on:
+    - basket.api
+    - catalog.api
+    - ocelotapigateway
+    - ordering.api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ApiSettings:BaseAddress: ocelotapigateway
+    image: aspnetrunbasics
     ports:
-    - published: 6379
-      target: 6379
-    restart: always
+    - published: 9004
+      target: 80
+    volumes:
+    - C:\Users\joydip\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\joydip\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
   basket.api:
     build:
-      context: E:\sasken-microservices\MicroservicesApp
+      context: E:\microservices\MicroservicesApp
       dockerfile: src/Basket/Basket.API/Dockerfile
       labels:
         com.microsoft.created-by: visual-studio
@@ -16,37 +29,48 @@ services:
       target: base
     container_name: basketapi
     depends_on:
-    - basektdb
+    - basketdb
+    - rabbitmq
     entrypoint: tail -f /dev/null
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
       ConnectionStrings:Redis: basketdb:6379
       DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      EventBus:HostName: rabbitmq
       NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
     image: basketapi:dev
     labels:
       com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
-        --additionalProbingPath /root/.nuget/fallbackpackages  ""'
+        --additionalProbingPath /root/.nuget/fallbackpackages  "/app/bin/Debug/netcoreapp3.1/Basket.API.dll"'
       com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
         dotnet); then kill $$PID; fi"
       com.microsoft.visualstudio.debuggee.program: dotnet
       com.microsoft.visualstudio.debuggee.workingdirectory: /app
     ports:
-    - published: 9501
+    - published: 9002
       target: 80
+    restart: on-failure
     tty: true
     volumes:
-    - E:\sasken-microservices\MicroservicesApp\src\Basket\Basket.API:/app:rw
+    - E:\microservices\MicroservicesApp\src\Basket\Basket.API:/app:rw
     - C:\Users\joydip\vsdbg\vs2017u5:/remote_debugger:rw
     - C:\Users\joydip\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - /.aspnet/https:/root/.aspnet/https/:rw
     - C:\Users\joydip\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
     - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
     - C:\Users\joydip\.nuget\packages:/root/.nuget/packages:ro
-    - E:\sasken-microservices\MicroservicesApp:/src:rw
+    - E:\microservices\MicroservicesApp:/src:rw
+  basketdb:
+    container_name: basketdb
+    image: redis
+    ports:
+    - published: 6379
+      target: 6379
+    restart: always
   catalog.api:
     build:
-      context: E:\sasken-microservices\MicroservicesApp
+      context: E:\microservices\MicroservicesApp
       dockerfile: src/Catalog/Catalog.API/Dockerfile
       labels:
         com.microsoft.created-by: visual-studio
@@ -71,17 +95,19 @@ services:
       com.microsoft.visualstudio.debuggee.program: dotnet
       com.microsoft.visualstudio.debuggee.workingdirectory: /app
     ports:
-    - published: 9500
+    - published: 9000
       target: 80
+    restart: on-failure
     tty: true
     volumes:
-    - E:\sasken-microservices\MicroservicesApp\src\Catalog\Catalog.API:/app:rw
+    - E:\microservices\MicroservicesApp\src\Catalog\Catalog.API:/app:rw
     - C:\Users\joydip\vsdbg\vs2017u5:/remote_debugger:rw
     - C:\Users\joydip\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - /.aspnet/https:/root/.aspnet/https/:rw
     - C:\Users\joydip\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
     - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
     - C:\Users\joydip\.nuget\packages:/root/.nuget/packages:ro
-    - E:\sasken-microservices\MicroservicesApp:/src:rw
+    - E:\microservices\MicroservicesApp:/src:rw
   catalogdb:
     container_name: catalogdb
     image: mongo
@@ -91,4 +117,106 @@ services:
     restart: always
     volumes:
     - /site:/data/db:rw
+  ocelotapigateway:
+    build:
+      context: E:\microservices\MicroservicesApp
+      dockerfile: src/ApiGateway/OcelotAPIGateway/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: OcelotAPIGateway
+      target: base
+    container_name: ocelotapigateway
+    depends_on:
+    - basket.api
+    - catalog.api
+    - ordering.api
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
+    image: ocelotapigateway:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  ""'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - published: 7000
+      target: 80
+    tty: true
+    volumes:
+    - E:\microservices\MicroservicesApp\src\ApiGateway\OcelotAPIGateway:/app:rw
+    - C:\Users\joydip\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Users\joydip\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - /.aspnet/https:/root/.aspnet/https/:rw
+    - C:\Users\joydip\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
+    - C:\Users\joydip\.nuget\packages:/root/.nuget/packages:ro
+    - E:\microservices\MicroservicesApp:/src:rw
+  orderdb:
+    container_name: orderdb
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: Samp@le123
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    ports:
+    - published: 1433
+      target: 1433
+    restart: always
+  ordering.api:
+    build:
+      context: E:\microservices\MicroservicesApp
+      dockerfile: src/Ordering/Ordering.API/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Ordering.API
+      target: base
+    container_name: orderapi
+    depends_on:
+    - orderdb
+    - rabbitmq
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ConnectionStrings:OrderConnection: Server=tcp:orderdb,1433;Database=OrderDb;User
+        Id=sa;Password=Samp@le123
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      EventBus:HostName: rabbitmq
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
+    image: orderingapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  ""'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - published: 9003
+      target: 80
+    restart: on-failure
+    tty: true
+    volumes:
+    - E:\microservices\MicroservicesApp\src\Ordering\Ordering.API:/app:rw
+    - C:\Users\joydip\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Users\joydip\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - /.aspnet/https:/root/.aspnet/https/:rw
+    - C:\Users\joydip\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
+    - C:\Users\joydip\.nuget\packages:/root/.nuget/packages:ro
+    - E:\microservices\MicroservicesApp:/src:rw
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3-management-alpine
+    ports:
+    - published: 5672
+      target: 5672
+    - published: 15672
+      target: 15672
+    restart: always
 version: '3.4'

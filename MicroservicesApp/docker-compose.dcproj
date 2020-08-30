@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>4620c847-7b48-408c-892e-9d68598815fc</ProjectGuid>
+    <ProjectGuid>267590ab-c989-4895-bfbe-b9496bc4e0a4</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
     <DockerServiceName>catalog.api</DockerServiceName>

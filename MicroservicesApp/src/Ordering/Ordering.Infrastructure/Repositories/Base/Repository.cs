@@ -5,7 +5,6 @@ using Ordering.Infrastructure.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace Ordering.Infrastructure.Repositories.Base
@@ -37,27 +36,23 @@ namespace Ordering.Infrastructure.Repositories.Base
             return await _context.Set<T>().ToListAsync();
         }
 
-        public async Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>> predicate)
+        public async Task<IReadOnlyList<T>> GetAsync(System.Linq.Expressions.Expression<Func<T, bool>> predicate)
         {
             return await _context.Set<T>().Where(predicate).ToListAsync();
         }
 
-        public async Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>> predicate = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includesString = null, bool disableTracking = true)
+        public async Task<IReadOnlyList<T>> GetAsync(System.Linq.Expressions.Expression<Func<T, bool>> predicate = null, Func<System.Linq.IQueryable<T>, System.Linq.IOrderedQueryable<T>> orderBy = null, string includeString = null, bool disableTracking = true)
         {
             IQueryable<T> query = _context.Set<T>();
             if (disableTracking) query = query.AsNoTracking();
-            if (!string.IsNullOrEmpty(includesString)) query = query.Include(includesString);
+            if (!string.IsNullOrEmpty(includeString)) query = query.Include(includeString);
             if (predicate != null) query = query.Where(predicate);
             if (orderBy != null) return await orderBy(query).ToListAsync();
 
             return await query.ToListAsync();
         }
 
-        public async Task<IReadOnlyList<T>> GetAsync(
-            Expression<Func<T, bool>> predicate = null, 
-            Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, 
-            List<Expression<Func<T, object>>> includes = null, 
-            bool disableTracking = true)
+        public async Task<IReadOnlyList<T>> GetAsync(System.Linq.Expressions.Expression<Func<T, bool>> predicate = null, Func<System.Linq.IQueryable<T>, System.Linq.IOrderedQueryable<T>> orderBy = null, List<System.Linq.Expressions.Expression<Func<T, object>>> includes = null, bool disableTracking = true)
         {
             IQueryable<T> query = _context.Set<T>();
             if (disableTracking) query = query.AsNoTracking();

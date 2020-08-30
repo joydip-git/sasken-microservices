@@ -10,7 +10,7 @@ namespace Catalog.API.Repositories
 {
     public class ProductRepository : IProductRepository
     {
-        private readonly ICatalogContext _context;
+        ICatalogContext _context;
 
         public ProductRepository(ICatalogContext context)
         {
@@ -40,13 +40,13 @@ namespace Catalog.API.Repositories
                 throw ex;
             }
         }
-        
+        //issue
         public async Task<bool> Delete(string id)
         {
-            FilterDefinition<Product> idFilter = Builders<Product>.Filter.Eq("Id", id);
+            FilterDefinition<Product> findProductFilter = Builders<Product>.Filter.Eq("Id", id);
             try
             {
-                DeleteResult deleteResult = await _context.Products.DeleteOneAsync(idFilter);
+                DeleteResult deleteResult = await _context.Products.DeleteOneAsync(findProductFilter);
                 return deleteResult.IsAcknowledged && deleteResult.DeletedCount > 0;
             }
             catch (Exception ex)
@@ -57,9 +57,14 @@ namespace Catalog.API.Repositories
         }
 
         public async Task<Product> GetProduct(string id)
-        {        
+        {
+            //FilterDefinition<Product> findByIdFilter = Builders<Product>.Filter.ElemMatch(p => p.Id, id);
             try
-            {        
+            {
+                //return await _context
+                //            .Products
+                //            .Find(findByIdFilter)
+                //            .FirstOrDefaultAsync();
                 return await _context
                           .Products
                           .Find(p=>p.Id==id)
@@ -86,10 +91,10 @@ namespace Catalog.API.Repositories
         
         public async Task<IEnumerable<Product>> GetProductByName(string name)
         {
-            FilterDefinition<Product> nameFilter = Builders<Product>.Filter.Eq("Name", name);
+            FilterDefinition<Product> filterByName = Builders<Product>.Filter.Eq("Name", name);
             try
             {
-                return await _context.Products.Find(nameFilter).ToListAsync();
+                return await _context.Products.Find(filterByName).ToListAsync();
             }
             catch (Exception ex)
             {

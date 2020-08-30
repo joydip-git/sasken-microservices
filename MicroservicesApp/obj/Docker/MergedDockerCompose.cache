@@ -1,7 +1,7 @@
 services:
   basket.api:
     build:
-      context: E:\sasken-microservices\MicroservicesApp
+      context: E:\microservices\MicroservicesApp
       dockerfile: src/Basket/Basket.API/Dockerfile
     container_name: basketapi
     depends_on:
@@ -25,7 +25,7 @@ services:
     restart: always
   catalog.api:
     build:
-      context: E:\sasken-microservices\MicroservicesApp
+      context: E:\microservices\MicroservicesApp
       dockerfile: src/Catalog/Catalog.API/Dockerfile
     container_name: catalogapi
     depends_on:

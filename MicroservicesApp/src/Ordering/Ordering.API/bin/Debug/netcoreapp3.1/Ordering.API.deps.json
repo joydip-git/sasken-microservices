@@ -24,10 +24,15 @@
     ".NETCoreApp,Version=v3.1": {
       "Ordering.API/1.0.0": {
         "dependencies": {
+          "AutoMapper": "10.0.0",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.0.1",
           "EventBusRabbitMQ": "1.0.0",
+          "MediatR": "8.1.0",
+          "MediatR.Extensions.Microsoft.DependencyInjection": "8.1.0",
           "Microsoft.EntityFrameworkCore.Design": "3.1.7",
-          "Microsoft.Extensions.DependencyInjection": "3.1.7",
+          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.10.8",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.4",
+          "Ordering.Application": "1.0.0",
           "Ordering.Core": "1.0.0",
           "Ordering.Infrastructure": "1.0.0",
           "Swashbuckle.AspNetCore": "5.5.1",
@@ -305,6 +310,63 @@
         },
         "compile": {
           "Ordering.API.dll": {}
+        }
+      },
+      "AutoMapper/10.0.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "System.Reflection.Emit": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/8.0.1": {
+        "dependencies": {
+          "AutoMapper": "10.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.7",
+          "Microsoft.Extensions.Options": "3.1.7"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
+      "MediatR/8.1.0": {
+        "runtime": {
+          "lib/netstandard2.1/MediatR.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.1/MediatR.dll": {}
+        }
+      },
+      "MediatR.Extensions.Microsoft.DependencyInjection/8.1.0": {
+        "dependencies": {
+          "MediatR": "8.1.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.7"
+        },
+        "runtime": {
+          "lib/netstandard2.0/MediatR.Extensions.Microsoft.DependencyInjection.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/MediatR.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
       "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
@@ -986,6 +1048,7 @@
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
         }
       },
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.10.8": {},
       "Microsoft.VisualStudio.Web.CodeGeneration/3.1.4": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "3.1.7",
@@ -1734,7 +1797,7 @@
           "System.Linq": "4.3.0",
           "System.ObjectModel": "4.3.0",
           "System.Reflection": "4.3.0",
-          "System.Reflection.Emit": "4.3.0",
+          "System.Reflection.Emit": "4.7.0",
           "System.Reflection.Emit.ILGeneration": "4.3.0",
           "System.Reflection.Emit.Lightweight": "4.3.0",
           "System.Reflection.Extensions": "4.3.0",
@@ -1860,15 +1923,7 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Reflection.Emit/4.3.0": {
-        "dependencies": {
-          "System.IO": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Emit.ILGeneration": "4.3.0",
-          "System.Reflection.Primitives": "4.3.0",
-          "System.Runtime": "4.3.0"
-        }
-      },
+      "System.Reflection.Emit/4.7.0": {},
       "System.Reflection.Emit.ILGeneration/4.3.0": {
         "dependencies": {
           "System.Reflection": "4.3.0",
@@ -2281,7 +2336,7 @@
           "System.IO": "4.3.0",
           "System.Linq": "4.3.0",
           "System.Reflection": "4.3.0",
-          "System.Reflection.Emit": "4.3.0",
+          "System.Reflection.Emit": "4.7.0",
           "System.Reflection.Emit.ILGeneration": "4.3.0",
           "System.Reflection.Extensions": "4.3.0",
           "System.Reflection.Primitives": "4.3.0",
@@ -2305,6 +2360,20 @@
         },
         "compile": {
           "EventBusRabbitMQ.dll": {}
+        }
+      },
+      "Ordering.Application/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "10.0.0",
+          "MediatR": "8.1.0",
+          "Ordering.Core": "1.0.0",
+          "Ordering.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "Ordering.Application.dll": {}
+        },
+        "compile": {
+          "Ordering.Application.dll": {}
         }
       },
       "Ordering.Core/1.0.0": {
@@ -3945,6 +4014,34 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AutoMapper/10.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-T09NoqMZBqw0/JEauXulxnmmerl0Zj03e0r6VCcJ0LURWBIaYxZPPoiDv8bHf5Y4x2xcXJp4JPXoCaeOMJfHEA==",
+      "path": "automapper/10.0.0",
+      "hashPath": "automapper.10.0.0.nupkg.sha512"
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/8.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hhUzmc8Ld7wCuVHJFodsxtPmFqBAhB6nUNQUgaMF3uamQdxOLxntG0dwv+5ApC67GABa8Oay8MEYGg5IgVZP1Q==",
+      "path": "automapper.extensions.microsoft.dependencyinjection/8.0.1",
+      "hashPath": "automapper.extensions.microsoft.dependencyinjection.8.0.1.nupkg.sha512"
+    },
+    "MediatR/8.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KJFnA0MV83bNOhvYbjIX1iDykhwFXoQu0KV7E1SVbNA/CmO2I7SAm2Baly0eS7VJ2GwlmStLajBfeiNgTpvYzQ==",
+      "path": "mediatr/8.1.0",
+      "hashPath": "mediatr.8.1.0.nupkg.sha512"
+    },
+    "MediatR.Extensions.Microsoft.DependencyInjection/8.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kKJOHmdFKjd5hpk+RG1NXoGkZj9AYgXDCHui3Sx1OMIeBJEe0luG93JvOdLsghf7VQa2OX0Yi00sE39um4SMEw==",
+      "path": "mediatr.extensions.microsoft.dependencyinjection/8.1.0",
+      "hashPath": "mediatr.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
       "type": "package",
       "serviceable": true,
@@ -4238,6 +4335,13 @@
       "sha512": "sha512-6SW0tpbJslc8LAY1XniRfLVcJa7bJUbbwvo2/ZRqfkMbJrsqIj9045vg3STtZhDhYRKhpYgjqGU11eeW4Pzyrg==",
       "path": "microsoft.openapi/1.1.4",
       "hashPath": "microsoft.openapi.1.1.4.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.10.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LXlwvlXetgFg2sqsLCzi+Kd+nV78VrRzy9u6nKU05yx9tcsF9BcLqL/+vtj01Z7RPhp0U8D4Px/bHbyMR9Ddjg==",
+      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.10.8",
+      "hashPath": "microsoft.visualstudio.azure.containers.tools.targets.1.10.8.nupkg.sha512"
     },
     "Microsoft.VisualStudio.Web.CodeGeneration/3.1.4": {
       "type": "package",
@@ -4799,12 +4903,12 @@
       "path": "system.reflection/4.3.0",
       "hashPath": "system.reflection.4.3.0.nupkg.sha512"
     },
-    "System.Reflection.Emit/4.3.0": {
+    "System.Reflection.Emit/4.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ljhUYtVcbSumUt0LQxbB14QCJyP1j0WOLovjA9fsG221VVTsOn7ekpi6i68KfJ/eRCfNIS+EksVj8zfKbilLkA==",
-      "path": "system.reflection.emit/4.3.0",
-      "hashPath": "system.reflection.emit.4.3.0.nupkg.sha512"
+      "sha512": "sha512-VR4kk8XLKebQ4MZuKuIni/7oh+QGFmZW3qORd1GvBq/8026OpW501SzT/oypwiQl4TvT8ErnReh/NzY9u+C6wQ==",
+      "path": "system.reflection.emit/4.7.0",
+      "hashPath": "system.reflection.emit.4.7.0.nupkg.sha512"
     },
     "System.Reflection.Emit.ILGeneration/4.3.0": {
       "type": "package",
@@ -5115,6 +5219,11 @@
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "EventBusRabbitMQ/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Ordering.Application/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

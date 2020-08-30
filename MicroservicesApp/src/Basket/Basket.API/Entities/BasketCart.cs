@@ -12,6 +12,7 @@ namespace Basket.API.Entities
 
         public BasketCart()
         {
+            
         }
 
         public BasketCart(string userName)

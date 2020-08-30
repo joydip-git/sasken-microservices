@@ -1,7 +1,6 @@
 version: '3.4'
 
 services:
-
     catalogdb:
         container_name: catalogdb
         restart: always
@@ -10,14 +9,32 @@ services:
             #- ./data:/data/db
         ports:
             - "27017:27017"
+
     basketdb:
         container_name: basketdb
         restart: always        
         ports:
             - "6379:6379"
 
+    orderdb:
+        container_name: orderdb
+        restart: always
+        ports:
+            - "1433:1433"
+        environment:
+            SA_PASSWORD: "Samp@le123"
+            ACCEPT_EULA: "Y"
+
+    rabbitmq:
+        container_name: rabbitmq
+        restart: always        
+        ports:
+            - "15672:15672"
+            - "5672:5672"
+
     catalog.api:
         container_name: catalogapi
+        restart: on-failure
         environment:
             - ASPNETCORE_ENVIRONMENT=Development
             - "CatalogDatabaseSettings:ConnectionString=mongodb://catalogdb:27017"
@@ -25,20 +42,68 @@ services:
             - catalogdb
         volumes:
             - ${HOME}/.microsoft/usersecrets/:/root/.microsoft/usersecrets
-            - ${HOME}/.aspnet/https:/root/.aspnet/https
+            - ${HOME}/.aspnet/https:/root/.aspnet/https/
         ports:
-            - "9500:80"
+            - "9000:80"
 
     basket.api:
         container_name: basketapi
+        restart: on-failure
         environment:
             - ASPNETCORE_ENVIRONMENT=Development
             - "ConnectionStrings:Redis=basketdb:6379"
+            - "EventBus:HostName=rabbitmq"
         depends_on:
             - basketdb
+            - rabbitmq
         volumes:
             - ${HOME}/.microsoft/usersecrets/:/root/.microsoft/usersecrets
-            - ${HOME}/.aspnet/https:/root/.aspnet/https
+            - ${HOME}/.aspnet/https:/root/.aspnet/https/
         ports:
-            - "9501:80"
+            - "9002:80"
 
+    ordering.api:
+        container_name: orderapi
+        restart: on-failure
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+            - "ConnectionStrings:OrderConnection=Server=tcp:orderdb,1433;Database=OrderDb;User Id=sa;Password=Samp@le123"
+            - "EventBus:HostName=rabbitmq"
+        depends_on:
+            - orderdb
+            - rabbitmq
+        volumes:
+            - ${HOME}/.microsoft/usersecrets/:/root/.microsoft/usersecrets
+            - ${HOME}/.aspnet/https:/root/.aspnet/https/
+        ports:
+            - "9003:80"
+
+    ocelotapigateway:
+        container_name: ocelotapigateway
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+        depends_on:
+            - catalog.api
+            - basket.api
+            - ordering.api
+        volumes:
+            - ${HOME}/.microsoft/usersecrets/:/root/.microsoft/usersecrets
+            - ${HOME}/.aspnet/https:/root/.aspnet/https/
+        ports:
+            - "7000:80"
+
+    aspnetrunbasics:
+        container_name: aspnetrunbasics
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+            - "ApiSettings:BaseAddress=ocelotapigateway"
+        depends_on:
+            - catalog.api
+            - basket.api
+            - ordering.api
+            - ocelotapigateway
+        ports:
+            - "9004:80"
+        volumes:
+            - ${HOME}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+            - ${HOME}/ASP.NET/Https:/root/.aspnet/https:ro

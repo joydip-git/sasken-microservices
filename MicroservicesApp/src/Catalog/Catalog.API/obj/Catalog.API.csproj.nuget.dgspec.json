@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\sasken-microservices\\MicroservicesApp\\src\\Catalog\\Catalog.API\\Catalog.API.csproj": {}
+    "E:\\microservices\\MicroservicesApp\\src\\Catalog\\Catalog.API\\Catalog.API.csproj": {}
   },
   "projects": {
-    "E:\\sasken-microservices\\MicroservicesApp\\src\\Catalog\\Catalog.API\\Catalog.API.csproj": {
+    "E:\\microservices\\MicroservicesApp\\src\\Catalog\\Catalog.API\\Catalog.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\sasken-microservices\\MicroservicesApp\\src\\Catalog\\Catalog.API\\Catalog.API.csproj",
+        "projectUniqueName": "E:\\microservices\\MicroservicesApp\\src\\Catalog\\Catalog.API\\Catalog.API.csproj",
         "projectName": "Catalog.API",
-        "projectPath": "E:\\sasken-microservices\\MicroservicesApp\\src\\Catalog\\Catalog.API\\Catalog.API.csproj",
+        "projectPath": "E:\\microservices\\MicroservicesApp\\src\\Catalog\\Catalog.API\\Catalog.API.csproj",
         "packagesPath": "C:\\Users\\joydip\\.nuget\\packages\\",
-        "outputPath": "E:\\sasken-microservices\\MicroservicesApp\\src\\Catalog\\Catalog.API\\obj\\",
+        "outputPath": "E:\\microservices\\MicroservicesApp\\src\\Catalog\\Catalog.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

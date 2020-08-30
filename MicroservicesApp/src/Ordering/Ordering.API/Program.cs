@@ -29,17 +29,18 @@ namespace Ordering.API
 
                 try
                 {
-                    var orderConext = serviceProvider.GetRequiredService<OrderContext>();
-                    OrderContextSeed.SeedAsync(orderConext, loggerFactory);
+                    var orderContext = serviceProvider.GetRequiredService<OrderContext>();
+                    OrderContextSeed.SeedAsync(orderContext, loggerFactory);
                 }
                 catch (Exception ex)
                 {
                     var logger = loggerFactory.CreateLogger<Program>();
                     logger.LogError(ex.ToString());
-                    throw ex;
+                    throw;
                 }
             }
         }
+
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)

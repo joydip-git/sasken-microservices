@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Basket.API.Data;
 using Basket.API.Data.Interfaces;
-using Basket.API.Repository;
-using Basket.API.Repository.Interfaces;
+using Basket.API.Repositories;
+using Basket.API.Repositories.Interfaces;
 using EventBusRabbitMQ;
 using EventBusRabbitMQ.Producer;
 using Microsoft.AspNetCore.Builder;
@@ -17,7 +17,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using Microsoft.VisualBasic;
 using RabbitMQ.Client;
 using StackExchange.Redis;
 
@@ -41,26 +40,34 @@ namespace Basket.API
             //option.AsyncTimeout = 60000;
             services.AddSingleton<ConnectionMultiplexer>(sp =>
             {
+                //ConfigurationOptions option = new ConfigurationOptions
+                //{
+                //    AbortOnConnectFail = false,
+                //    EndPoints = { Configuration.GetConnectionString("Redis") }
+                //};
+                //var config = ConfigurationOptions.Parse(Configuration.GetConnectionString("Redis"), true);
                 return ConnectionMultiplexer.Connect(option);
             });
             services.AddTransient<IBasketContext, BasketContext>();
             services.AddTransient<IBasketRepository, BasketRepository>();
-
             services.AddAutoMapper(typeof(Startup));
-            services.AddSwaggerGen(option =>
+            services.AddSwaggerGen(c =>
             {
-                option.SwaggerDoc("v1", new OpenApiInfo { Title = "Basket API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Basket API", Version = "v1" });
             });
-            //rabbitmq DIs and svc registration
+
+            //for RabbitMQ connection
             services.AddSingleton<IRabbitMQConnection>(sp =>
             {
                 var factory = new ConnectionFactory();
+
                 if (!string.IsNullOrEmpty(Configuration["EventBus:HostName"]))
                     factory.HostName = Configuration["EventBus:HostName"];
                 if (!string.IsNullOrEmpty(Configuration["EventBus:UserName"]))
                     factory.UserName = Configuration["EventBus:UserName"];
                 if (!string.IsNullOrEmpty(Configuration["EventBus:Password"]))
                     factory.Password = Configuration["EventBus:Password"];
+
                 return new RabbitMQConnection(factory);
             });
             services.AddSingleton<EventBusRabbitMQProducer>();
@@ -82,11 +89,10 @@ namespace Basket.API
             {
                 endpoints.MapControllers();
             });
-
             app.UseSwagger();
-            app.UseSwaggerUI(option =>
+            app.UseSwaggerUI(c =>
             {
-                option.SwaggerEndpoint("/swagger/v1/swagger.json", "Basket API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Basket API V1");
             });
         }
     }

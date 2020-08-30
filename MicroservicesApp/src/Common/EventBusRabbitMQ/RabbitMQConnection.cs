@@ -35,7 +35,7 @@ namespace EventBusRabbitMQ
             {
                 if (!IsConnected)
                 {
-                    throw new InvalidOperationException("No rabbitmq connection available to create channel");
+                    throw new InvalidOperationException("No RabbitMQ connections are available to perform this action");
                 }
                 return _connection.CreateModel();
             }
@@ -43,13 +43,16 @@ namespace EventBusRabbitMQ
             {
                 throw ex;
             }
+
         }
 
         public void Dispose()
         {
             if (_isDisposed)
                 return;
+
             _isDisposed = true;
+
             try
             {
                 _connection.Dispose();
@@ -66,19 +69,20 @@ namespace EventBusRabbitMQ
             {
                 _connection = _connectionFactory.CreateConnection();
             }
-            catch (BrokerUnreachableException)
+            catch (BrokerUnreachableException ex)
             {
                 Thread.Sleep(2000);
                 _connection = _connectionFactory.CreateConnection();
             }
+
             if (IsConnected)
             {
-                Console.WriteLine($"RabbitMq connection got a connection {_connection.Endpoint.HostName} and is subscribed ");
+                Console.WriteLine($"RabbitMQ persistent connection acquired a connection {_connection.Endpoint.HostName} and is subscribed to failure events");
                 return true;
             }
             else
             {
-                Console.WriteLine($"RabbitMq connection couldn't be established ");
+                Console.WriteLine("FATAL ERROR: RabbitMQ connections could not be created and opened");
                 return false;
             }
         }

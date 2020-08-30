@@ -39,9 +39,9 @@ namespace Catalog.API
                 sp => sp.GetRequiredService<IOptions<CatalogDatabaseSettings>>().Value);
             services.AddTransient<ICatalogContext, CatalogContext>();
             services.AddTransient<IProductRepository, ProductRepository>();
-            services.AddSwaggerGen(options =>
+            services.AddSwaggerGen(c =>
             {
-                options.SwaggerDoc("v1", new OpenApiInfo { Title = "Catalog API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Catalog API", Version = "v1" });
             });
         }
 
@@ -61,11 +61,10 @@ namespace Catalog.API
             {
                 endpoints.MapControllers();
             });
-
             app.UseSwagger();
-            app.UseSwaggerUI(options =>
+            app.UseSwaggerUI(c =>
             {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Catalog API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Catalog API V1");
             });
         }
     }

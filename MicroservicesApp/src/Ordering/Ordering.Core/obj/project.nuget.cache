@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EGKk9+dfoDcMBEkPRJKMuz0Lj7AwBG7hkJg+kwvsd6+ckSGuPrQB1ZmQzlEQ2XmHyFIpbWzZ7g4cWDW2YfqLxg==",
+  "dgSpecHash": "p90x0Cc6Rl1fdEs45EdzQJZKJltUYZMdUUKWO/ys00VWfe89B23UWt7OTtBeQ7l5meEISQe2i1WZqD2qBirx3Q==",
   "success": true,
-  "projectFilePath": "E:\\sasken-microservices\\MicroservicesApp\\src\\Ordering\\Ordering.Core\\Ordering.Core.csproj",
+  "projectFilePath": "E:\\microservices\\MicroservicesApp\\src\\Ordering\\Ordering.Core\\Ordering.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joydip\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

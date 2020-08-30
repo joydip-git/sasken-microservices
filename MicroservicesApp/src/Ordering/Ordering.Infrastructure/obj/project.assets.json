@@ -6254,11 +6254,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\sasken-microservices\\MicroservicesApp\\src\\Ordering\\Ordering.Infrastructure\\Ordering.Infrastructure.csproj",
+      "projectUniqueName": "E:\\microservices\\MicroservicesApp\\src\\Ordering\\Ordering.Infrastructure\\Ordering.Infrastructure.csproj",
       "projectName": "Ordering.Infrastructure",
-      "projectPath": "E:\\sasken-microservices\\MicroservicesApp\\src\\Ordering\\Ordering.Infrastructure\\Ordering.Infrastructure.csproj",
+      "projectPath": "E:\\microservices\\MicroservicesApp\\src\\Ordering\\Ordering.Infrastructure\\Ordering.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\joydip\\.nuget\\packages\\",
-      "outputPath": "E:\\sasken-microservices\\MicroservicesApp\\src\\Ordering\\Ordering.Infrastructure\\obj\\",
+      "outputPath": "E:\\microservices\\MicroservicesApp\\src\\Ordering\\Ordering.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -6277,8 +6277,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "E:\\sasken-microservices\\MicroservicesApp\\src\\Ordering\\Ordering.Core\\Ordering.Core.csproj": {
-              "projectPath": "E:\\sasken-microservices\\MicroservicesApp\\src\\Ordering\\Ordering.Core\\Ordering.Core.csproj"
+            "E:\\microservices\\MicroservicesApp\\src\\Ordering\\Ordering.Core\\Ordering.Core.csproj": {
+              "projectPath": "E:\\microservices\\MicroservicesApp\\src\\Ordering\\Ordering.Core\\Ordering.Core.csproj"
             }
           }
         }

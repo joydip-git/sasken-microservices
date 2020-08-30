@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Ordering.Core.Entities.Base
+﻿namespace Ordering.Core.Entities.Base
 {
     public class EntityBase<TId> : IEntityBase<TId>
     {
-        private int? _reqesutedHashCode;
-        public virtual TId Id { get; protected set; }
+        private int? _requestedHashCode;
 
+        public virtual TId Id { get; protected set; }
+        public bool IsTransient()
+        {
+            return Id.Equals(default(TId));
+        }
         public override bool Equals(object obj)
         {
             if (obj == null || !(obj is EntityBase<TId>))
@@ -31,21 +31,15 @@ namespace Ordering.Core.Entities.Base
         {
             if (!IsTransient())
             {
-                if (!_reqesutedHashCode.HasValue)
+                if (!_requestedHashCode.HasValue)
                 {
-                    _reqesutedHashCode = Id.GetHashCode() ^ 31;
+                    _requestedHashCode = Id.GetHashCode() ^ 31;
                 }
-                return _reqesutedHashCode.Value;
+                return _requestedHashCode.Value;
             }
             else
                 return base.GetHashCode();
         }
-
-        public bool IsTransient()
-        {
-            return Id.Equals(default(TId));
-        }
-        
         public static bool operator !=(EntityBase<TId> left, EntityBase<TId> right)
         {
             return !(left == right);

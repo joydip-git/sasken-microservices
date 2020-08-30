@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:52839",
+      "applicationUrl": "http://localhost:54660",
       "sslPort": 0
     }
   },
@@ -30,7 +30,7 @@
     "Docker": {
       "commandName": "Docker",
       "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/weatherforecast",
       "publishAllPorts": true
     }
   }
