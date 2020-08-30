@@ -1,11 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "/ubJpv1TdaqBzA/FoykAvI4ZtBtKXENkpt23ZPn91uXg3Xm4bJiT7n36pqOu6QwJQAKKS4QrdM5OOKmuvMYQAg==",
+  "dgSpecHash": "HTiYc3yYEHG5Cfv2uWRaFQQmras75xcjBBp7qMvQO4YJN8dRoR+UdC397V0DM3KkrQq+6O55u/c7BJIt92hoQA==",
   "success": true,
   "projectFilePath": "E:\\sasken-microservices\\MicroservicesApp\\src\\Ordering\\Ordering.Application\\Ordering.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\joydip\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
+    "C:\\Users\\joydip\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512",
+    "C:\\Users\\joydip\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\joydip\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\joydip\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
+    "C:\\Users\\joydip\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.7.0\\system.reflection.emit.ilgeneration.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }

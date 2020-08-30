@@ -1,0 +1,25 @@
+1. Finish Infrastructure
+2. Application Layer --???? CQRS (using MadiatR)
+3. Ordering API --> 
+	a. To create a class with methods to consume message from Message Broker
+	b. Add this class as middleware (custom) in the MVC pipleine
+	   this middleware will consume message from Message Broker and using mediator pattern delegate the call to update db (place an order)
+        c. Upon receiving message from broker (BasketCheckoutEvent) and convert/map the same to some other domain model (different from original domian model, i.e. Order)
+	d. Have controller action for returning list of orders from db
+
+4. test the application (for this purpose we are going to add an extra action PlaceOrder in the controller)
+5. dockerize everything till date
+
+API Gateway
+6. create api gateway (use Ocelot)
+   a. create WebHost application with *.json file to configure the routes
+   b. test the application
+   c. dockerize the same
+
+7. WebApp (Razor Pages)
+   a. create the application and configure to use HttpClientFactory
+   b. Api handler classes
+   c. Design our pages
+   d. dockerize the same
+
+Conclusion: webapp, api gateway, ordering api (sql server), catalogapi (mongodb), basketapi (redis)

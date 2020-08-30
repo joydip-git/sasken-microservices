@@ -11,5 +11,13 @@ namespace Ordering.API.Controllers
     [ApiController]
     public class OrderController : ControllerBase
     {
+        //public void GetOrdersByUserName(string userName)
+        //{
+        //    //return List<T>;
+        //}
+        //public void CheckoutOrder(T ?)
+        //{
+
+        //}
     }
 }

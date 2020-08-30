@@ -59,3 +59,8 @@ E:\sasken-microservices\MicroservicesApp\bin\Debug\System.Diagnostics.Performanc
 E:\sasken-microservices\MicroservicesApp\bin\Debug\System.IO.Pipelines.dll
 E:\sasken-microservices\MicroservicesApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 E:\sasken-microservices\MicroservicesApp\bin\Debug\Basket.API.pdb
+E:\sasken-microservices\MicroservicesApp\bin\Debug\EventBusRabbitMQ.dll
+E:\sasken-microservices\MicroservicesApp\bin\Debug\RabbitMQ.Client.dll
+E:\sasken-microservices\MicroservicesApp\bin\Debug\AutoMapper.dll
+E:\sasken-microservices\MicroservicesApp\bin\Debug\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\sasken-microservices\MicroservicesApp\bin\Debug\EventBusRabbitMQ.pdb

@@ -1,12 +1,12 @@
 E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Infrastructure\bin\Debug\netstandard2.0\Ordering.Infrastructure.deps.json
 E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Infrastructure\bin\Debug\netstandard2.0\Ordering.Infrastructure.dll
-E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Infrastructure\obj\Debug\netstandard2.0\Ordering.Infrastructure.AssemblyInfoInputs.cache
-E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Infrastructure\obj\Debug\netstandard2.0\Ordering.Infrastructure.AssemblyInfo.cs
-E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Infrastructure\obj\Debug\netstandard2.0\Ordering.Infrastructure.csprojAssemblyReference.cache
 E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Infrastructure\bin\Debug\netstandard2.0\Ordering.Infrastructure.pdb
 E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Infrastructure\bin\Debug\netstandard2.0\Ordering.Core.dll
 E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Infrastructure\bin\Debug\netstandard2.0\Ordering.Core.pdb
+E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Infrastructure\obj\Debug\netstandard2.0\Ordering.Infrastructure.csprojAssemblyReference.cache
 E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Infrastructure\obj\Debug\netstandard2.0\Ordering.Infrastructure.csproj.CoreCompileInputs.cache
+E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Infrastructure\obj\Debug\netstandard2.0\Ordering.Infrastructure.AssemblyInfoInputs.cache
+E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Infrastructure\obj\Debug\netstandard2.0\Ordering.Infrastructure.AssemblyInfo.cs
 E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Infrastructure\obj\Debug\netstandard2.0\Ordering.Infrastructure.csproj.CopyComplete
 E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Infrastructure\obj\Debug\netstandard2.0\Ordering.Infrastructure.dll
 E:\sasken-microservices\MicroservicesApp\src\Ordering\Ordering.Infrastructure\obj\Debug\netstandard2.0\Ordering.Infrastructure.pdb
